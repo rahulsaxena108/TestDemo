@@ -12,14 +12,12 @@ namespace DevOpsDemo.Controllers
     public class HomeController : Controller
     {
         IPostRepository postRepository;
-        public HomeController(IPostRepository _postRepository)
+        public HomeController()
         {
-            postRepository = _postRepository;
         }
         public IActionResult Index()
-        {
-            var model = postRepository.GetPosts();
-            return View(model);
+        {           
+            return View();
         }
         public IActionResult About()
         {
